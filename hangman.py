@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[8]:
-
 import random
 
 def hangman(word):
@@ -20,11 +15,11 @@ def hangman(word):
     rletters = list(word)
     board = ["_"] * len(word)
     win = False
-    print("Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РєР°Р·РЅСЊ!")
+    print("Добро пожаловать на казнь!")
     
     while wrong < len(stages) - 1:
         print("\n")
-        msg = "Р’РІРµРґРёС‚Рµ Р±СѓРєРІСѓ: "
+        msg = "Введите букву: "
         char = input(msg)
         if char in rletters:
             cind = rletters.index(char)
@@ -36,25 +31,14 @@ def hangman(word):
         e = wrong + 1
         print("\n".join(stages[0: e]))
         if "_" not in board:
-            print("Р’С‹ РІС‹РёРіСЂР°Р»Рё! Р‘С‹Р»Рѕ Р·Р°РіР°РґР°РЅРѕ СЃР»РѕРІРѕ: ")
+            print("Вы выиграли! Было загадано слово: ")
             print("".join(board))
             win = True
             break
     if not win:
         print("\n".join(stages[0: e]))
-        print("Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё! Р‘С‹Р»Рѕ Р·Р°РіР°РґР°РЅРѕ СЃР»РѕРІРѕ: {}".format(word))
+        print("Вы проиграли! Было загадано слово: {}".format(word))
         
 words = ["cat", "dog", "duck", "owl", "fox"]
 word = random.choice(words)
 hangman(word)
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
