@@ -89,7 +89,7 @@ class Game:
         if p1.wins < p2.wins:
             wn = "выиграл {}".format(p2.name)
             return wn
-        return "победила дружба."
+        return "победила дружба"
         
     def play_game(self):
         """метод отвечает за процесс игры"""
